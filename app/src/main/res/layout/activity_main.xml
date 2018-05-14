@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    >
+
+    <com.jgabrielfreitas.core.BlurImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/album_art_so_long" />
+
+    <!-- make sure album art is 600px x 600px for accuracy -->
+    <ImageView
+        android:id="@+id/albumArt"
+        android:layout_width="298dp"
+        android:layout_height="418dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        app:srcCompat="@drawable/album_art_so_long" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/progressBar"
+        android:layout_centerInParent="true"
+        android:text="So Long - Massari"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <SeekBar
+        android:id="@+id/progressBar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/timeStampLayout"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:id="@+id/timeStampLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mediaControlLayout"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/elapsedTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="0:00"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/remainingTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="240dp"
+            android:text="- 2:00"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mediaControlLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="113dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/skip_prev_button"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/skip_prev_button" />
+
+        <Button
+            android:id="@+id/play_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/play_button"
+            android:onClick="playMusic" />
+
+        <Button
+            android:id="@+id/skip_next_button"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/skip_next_button" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/volumeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="74dp">
+
+        <ImageView
+            android:id="@+id/volumeImage"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/med_volume_button" />
+
+        <SeekBar
+            android:id="@+id/volumeBar"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:max="100"
+            android:progress="50" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="27dp"
+        android:gravity="center_horizontal">
+
+        <Switch
+            android:id="@+id/loopSwitch"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Loop"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
